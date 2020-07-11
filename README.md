@@ -1,7 +1,7 @@
 # SousChef
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8. 
-This project makes use of [Spoonacular API](https://spoonacular.com/food-api) to fetch data. Sign in on their website to get the API Key. Replace the apiKey in /src/app/constant.model.ts with your apiKey.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8.
+This project makes use of [Spoonacular API](https://spoonacular.com/food-api) to fetch data. Sign in on their website to get the API Key. Replace the apiKey in `/src/app/constant.model.ts` with your apiKey.
 
 ## Development server
 
