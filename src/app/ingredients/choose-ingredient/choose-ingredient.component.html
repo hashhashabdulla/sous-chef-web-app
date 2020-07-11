@@ -1,0 +1,48 @@
+<form [formGroup]="form" class="ingredients-input-form">
+  <mat-form-field class="chip-list">
+    <mat-chip-list #chipList aria-label="Fruit selection">
+      <mat-chip
+        class="ingredient-search-chip"
+        *ngFor="let ingredient of selectedIngredients"
+        [selectable]="selectable"
+        [removable]="removable"
+        (removed)="remove(ingredient)"
+      >
+        {{ ingredient.name }}
+        <mat-icon
+          class="ingredient-search-chip-remove"
+          matChipRemove
+          *ngIf="removable"
+          >cancel</mat-icon
+        >
+      </mat-chip>
+      <input
+        class="input-ingredient-text"
+        placeholder="Ingredients you have..."
+        #ingredientInput
+        formControlName="chooseIngredientText"
+        [matAutocomplete]="auto"
+        [matChipInputFor]="chipList"
+        (matChipInputTokenEnd)="add($event)"
+      />
+    </mat-chip-list>
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      [displayWith]="displayIngredientName"
+      (optionSelected)="selected($event)"
+    >
+      <mat-option *ngFor="let option of filteredIngredients" [value]="option">
+        {{ option.name }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    class="btn-search"
+    color="primary"
+    (click)="onSeachClick($event)"
+  >
+    Search
+  </button>
+</form>

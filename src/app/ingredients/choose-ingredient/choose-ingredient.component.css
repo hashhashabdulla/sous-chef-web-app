@@ -1,0 +1,35 @@
+.ingredients-input-form {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  grid-gap: 1em;
+  border-radius: 20px;
+  background-color: #64dd17;
+  padding: 20px;
+  box-shadow: 0px 11px 15px -7px #000000, 0px 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+}
+
+.input-ingredient-text {
+  color: black;
+}
+
+.ingredient-search-chip {
+  background-color: #041827;
+  color: white;
+}
+
+.ingredient-search-chip-remove {
+  color: white !important;
+}
+
+.chip-list {
+  margin: 10px;
+}
+
+.btn-search {
+  margin: 10px;
+  justify-self: center;
+  align-self: start;
+  padding: 0 25px;
+  border-radius: 20px;
+}

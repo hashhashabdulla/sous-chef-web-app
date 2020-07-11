@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "proxima-nova-soft", "Proxima Nova Soft", Helvetica, Arial,
+    sans-serif;
+  background-color: #041827;
+  color: white;
+}
+
+.mat-dialog-container {
+  background-color: #041827 !important;
+  color: white !important;
+}
+
+.cdk-global-scrollblock {
+  position: static !important;
+  overflow: hidden !important;
+}

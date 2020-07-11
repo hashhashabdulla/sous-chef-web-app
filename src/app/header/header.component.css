@@ -1,0 +1,21 @@
+.header-title {
+  text-align: center;
+  display: flex;
+  padding: 70px 0;
+  flex-direction: column;
+}
+
+.title-text {
+  color: white;
+  font-family: "Century Gothic";
+  font-weight: 600;
+  font-size: 75px;
+}
+
+.sub-title-text {
+  color: white;
+  font-family: "Century Gothic";
+  font-weight: 600;
+  font-size: 17px;
+  margin-top: 17px;
+}

@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>
+  <b>{{ data.title }}</b>
+</h1>
+<mat-dialog-content>
+  <h2><b>Summary</b></h2>
+  <p [innerHTML]="data.summary"></p>
+  <br />
+  <h2><b>Instructions</b></h2>
+  <p>{{ data.instructions }}</p>
+  <br />
+  <h2><b>Credits</b></h2>
+  <a href="{{ data.sourceUrl }}" target="_blank" rel="noopener noreferrer">{{
+    data.sourceName
+  }}</a>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

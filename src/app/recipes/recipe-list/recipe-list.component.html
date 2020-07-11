@@ -1,0 +1,94 @@
+<div class="recipe-list-container" *ngIf="recipeList.length > 0">
+  <mat-card class="recipe-card" *ngFor="let recipe of recipeList">
+    <mat-card-header>
+      <mat-card-title>{{ recipe.title }}</mat-card-title>
+      <ng-container *ngFor="let recipeInfo of recipeInfoList">
+        <div class="recipe-header-info" *ngIf="recipeInfo.id === recipe.id">
+          <img
+            class="recipe-header-info-img"
+            src="/assets/images/serving.png"
+            alt="servings"
+          />
+          <h5>{{ recipeInfo.servings }} Servings</h5>
+
+          <img
+            class="recipe-header-info-img"
+            src="/assets/images/time.png"
+            alt="servings"
+          />
+          <h5>{{ recipeInfo.readyInMinutes }} Minutes</h5>
+        </div>
+      </ng-container>
+      <ng-container
+        *ngFor="let recipeInfo of recipeInfoList"
+        class="recipe-more-info-div"
+      >
+        <button
+          *ngIf="recipeInfo.id === recipe.id"
+          mat-mini-fab
+          class="recipe-more-info-button"
+          aria-label="More Info"
+          (click)="openDialog(recipeInfo)"
+        >
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+      </ng-container>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="recipe-card-full-content">
+        <img
+          class="recipe-img"
+          src="{{ recipe.image }}"
+          alt="{{ recipe.title }}"
+        />
+        <div class="recipe-card-content">
+          <div class="used-unused-missed-ingredients">
+            <p class="used-unused-missed-text">Used Ingredients:</p>
+            <mat-chip-list>
+              <mat-chip
+                class="used-ingredients-chip"
+                *ngFor="let usedIngredient of recipe.usedIngredients"
+                >{{ usedIngredient.name }}</mat-chip
+              >
+              <mat-chip
+                class="none-chip"
+                *ngIf="recipe.usedIngredientCount === 0"
+                >None</mat-chip
+              >
+            </mat-chip-list>
+          </div>
+          <div class="used-unused-missed-ingredients">
+            <p class="used-unused-missed-text">Unused Ingredients:</p>
+            <mat-chip-list>
+              <mat-chip
+                class="unused-ingredients-chip"
+                *ngFor="let unusedIngredient of recipe.unusedIngredients"
+                >{{ unusedIngredient.name }}</mat-chip
+              >
+              <mat-chip
+                class="none-chip"
+                *ngIf="recipe.unusedIngredients.length === 0"
+                >None</mat-chip
+              >
+            </mat-chip-list>
+          </div>
+          <div class="used-unused-missed-ingredients">
+            <p class="used-unused-missed-text">Missed Ingredients:</p>
+            <mat-chip-list>
+              <mat-chip
+                class="missed-ingredients-chip"
+                *ngFor="let missedIngredient of recipe.missedIngredients"
+                >{{ missedIngredient.name }}</mat-chip
+              >
+              <mat-chip
+                class="none-chip"
+                *ngIf="recipe.missedIngredientCount === 0"
+                >None</mat-chip
+              >
+            </mat-chip-list>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

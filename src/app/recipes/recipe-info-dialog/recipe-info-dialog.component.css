@@ -1,0 +1,11 @@
+a,
+p > a {
+  color: #62dd44;
+}
+
+h1,
+h2,
+p {
+  font-family: "proxima-nova-soft", "Proxima Nova Soft", Helvetica, Arial,
+    sans-serif !important;
+}
